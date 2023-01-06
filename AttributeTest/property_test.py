@@ -4,7 +4,7 @@
 # @Author:boyizhang
 class Person():
 
-    def __init__(self, name,age):
+    def __init__(self, name, age):
         self.name = name
         self.age = age
 
@@ -17,15 +17,14 @@ class Person():
         pass
 
 
-
 # p = Person(name='boyi',age = 20)
 # p.n
 
 class Animal():
 
     def getName(self): ...
-    def setName(self): ...
 
+    def setName(self): ...
 
 
 class DirectorySize:
@@ -33,14 +32,24 @@ class DirectorySize:
     def __get__(self, obj, objtype=None):
         return len(obj.dirname)
 
-class Directory:
 
-    size = DirectorySize()              # Descriptor instance
+class Directory:
+    size = DirectorySize()  # Descriptor instance
 
     def __init__(self, dirname):
-        self.dirname = dirname          # Regular instance attribute
+        self.dirname = dirname  # Regular instance attribute
 
-s = Directory('songs')
-g = Directory('gaes')
-print(s.size)
-print(g.size)
+
+if __name__ == '__main__':
+    # 描述器
+    s = Directory('songs')
+    g = Directory('gaes')
+    print(s.size)
+    print(g.size)
+    # property
+    p = Person(name='boyi', age=20)
+    p.name = 'bo'
+    print(p.name)
+
+    animal = Animal()
+    print(animal.getName())
