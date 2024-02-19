@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 # @Time:2022/7/17 17:51
 # @Author:boyizhang
@@ -43,4 +42,13 @@ if __name__ == '__main__':
   fooChild.bar('HelloWorld')
 """
 # execfile('super_method.py')
-exec(run_code)
+globals_vals = {}
+locals_vals = {}
+print(globals_vals)
+print("+" * 100)
+print(locals_vals)
+# py3.8
+exec(run_code, globals_vals, locals_vals)
+print(f"type:{type(globals_vals)}, globals_vals:\n{globals_vals.keys()}")
+print("+" * 100)
+print(f"type:{type(locals_vals)}, locals_vals:\n{locals_vals.keys()}")

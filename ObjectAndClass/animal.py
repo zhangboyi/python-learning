@@ -11,3 +11,12 @@ class Animal():
 
     def getVoice(self):
         print("I am a cue animal~")
+
+import abc
+class Animal2(metaclass=abc.ABCMeta):
+    def __init__(self,name):
+        self.name = name
+
+    @abc.abstractmethod
+    def getVoice(self):
+        pass
